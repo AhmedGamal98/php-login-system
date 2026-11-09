@@ -1,9 +1,9 @@
 <?php
 
 //connection variables
-$host = 'localhost';
-$user = 'root';
-$password = 'YOUR_DB_PASSWORD';
+$host = getenv('DB_HOST') ?: 'localhost';
+$user = getenv('DB_USER') ?: 'root';
+$password = getenv('DB_PASSWORD') ?: '';   // XAMPP default: empty password
 
 //create mysql connection
 $mysqli = new mysqli($host,$user,$password);
